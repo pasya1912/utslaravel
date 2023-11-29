@@ -10,6 +10,7 @@
                     <th>Harga Jual</th>
                     <th>Total Harga</th>
                     <th>Total Harga Setelah Diskon</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,10 @@
                         <td>{{ $item->harga }}</td>
                         <td>{{ $item->total }}</td>
                         <td>{{ $item->total_bayar }} ({{ $item->diskon * 100 }}% off)</td>
+                        <td>
+                            <a href="{{ route('edit', $item->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('delete', $item->id) }}" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                 @empty
                     <tr>
